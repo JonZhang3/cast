@@ -9,6 +9,8 @@ Cast.toChar(object, defaultValue);
 // 对于不需提供默认值参数的方法，在无法完成转换时将会抛出异常
 // 如下方法均提供了这两种方式
 Cast.toChar(object);
+// 将指定的对象转换为基本类型 char
+Cast.toCharValue(object);
 // 将指定的对象转换为字符串，如果要转换的对象为数组或集合类型，会将其元素拼接起来，用英文逗号分隔
 // eg: int[]{1, 2, 3} => "1,2,3"
 // Clob => String
@@ -17,13 +19,20 @@ Cast.toStr(object, defaultValue);
 // "true"、"on"、"yes"、"1" 将转换为 true
 // "false"、"off"、"no"、"0" 将转换为 false
 Cast.toBool(object, defaultValue);
+Cast.toBoolValue(object);
 
 Cast.toByte(object, defaultValue);
+Cast.toByteValue(object);
 Cast.toShort(object, defaultValue);
+Cast.toShortValue(object);
 Cast.toInteger(object, defaultValue);
+Cast.toIntValue(object);
 Cast.toLong(object, defaultValue);
+Cast.toLongValue(object);
 Cast.toFloat(object, defaultValue);
+Cast.toFloatValue(object);
 Cast.toDouble(object, defaultValue);
+Cast.toDoubleValue(object);
 Cast.toBigInteger(object, defaultValue);
 Cast.toBigDecimal(object, defaultValue);
 
@@ -47,6 +56,11 @@ Cast.toArray(collection, elementTargetClass, defaultValue);
 Cast.toCharset(string, defaultValue);
 
 Cast.toTimeZone(string, defaultValue);
+
+Cast.toLocale(localeStr, defaultValue);
+
+// 将对象转换为指定的类型，转换规则同以上方法，如果不能转换，将返回 null
+Cast.to(object, targetClass);
 ```
 
 ### 安装
@@ -56,6 +70,6 @@ Cast.toTimeZone(string, defaultValue);
 <dependency>
     <groupId>com.github.jonzhang3</groupId>
     <artifactId>cast</artifactId>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
 </dependency>
 ```
